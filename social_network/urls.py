@@ -20,5 +20,7 @@ from django.views.generic import TemplateView
 urlpatterns = [
     path('', TemplateView.as_view(template_name='index.html')),
     path('admin/', admin.site.urls),
-    path('mininsta/', include('apps.mininsta.urls'))
+    # path('mininsta/', include('apps.mininsta.urls'))
+    path('post/', include('apps.post.urls')),
+    path('user/', include('apps.user.urls')),
 ]

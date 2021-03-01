@@ -1,0 +1,18 @@
+{% load loan_custom_tags %}
+{% load static %}
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'loan/style.css' %}">
+    <title>{% block title %}Lottery Base Page{% endblock %}</title>
+</head>
+
+<body style="display: flex; flex-direction: row">
+<div class="sidenav">
+    {% t_recent_loans %}
+</div>
+<div>{% block content %}
+{% endblock %}</div>
+
+
+</body>
+</html>

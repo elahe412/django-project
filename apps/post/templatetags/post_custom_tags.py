@@ -19,3 +19,7 @@ def post_age(publish_date):
     if days <= 365:
         return '{} months ago'.format(month)
 
+
+@register.simple_tag(name='likes_cnt')
+def count_likes():
+    return
