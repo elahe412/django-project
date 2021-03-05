@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Welcome</title>
+    <title>new post</title>
 </head>
 <body>
 <form action="" method="post">
@@ -11,11 +11,13 @@
     <table><tr>{{ form.as_table }}</tr></table>
 
     <tr><td></td><td>
-        <input type="submit" VALUE="login">
+        <input type="submit" VALUE="post">
         <input type="reset" VALUE="Reset"></td></tr>
 </form>
-<p>Don't have an account?<a href={% url 'signup_user' %}>Signup</a></p>
-<a href={% url 'admin:index' %}>admin panel</a>
-
+{#<form action="" method="post">#}
+{#    <label >title </label>#}
+{#    <input  type="text" name="your_name" value="{{ current_name }}">#}
+{#    <input type="submit" value="OK">#}
+{#</form>#}
 </body>
 </html>

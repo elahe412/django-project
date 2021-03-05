@@ -20,6 +20,12 @@ class LogInForm(forms.Form):
         cleaned_data = super().clean()
         e_mail = cleaned_data.get('email')
         pass_word = sha256(cleaned_data.get('password').encode()).hexdigest()
-        if e_mail:
-            if not User.objects.filter(email=e_mail, password=pass_word).exists():
+        allowed_user = User.objects.get(email='eli@yahoo.com')
+        if not e_mail:
+            return ValidationError('User Unavailable')
+        elif e_mail == allowed_user.email:
+            if pass_word != allowed_user.password:
+                # if not User.objects.filter(email=e_mail, password=pass_word).exists():
                 raise ValidationError('Incorrect Password')
+        else:
+            return ValidationError('You can not login at this time')

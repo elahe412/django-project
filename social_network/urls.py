@@ -15,12 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.views.generic import TemplateView
+
+from apps.user.views.views import LoginUser
 
 urlpatterns = [
-    path('', TemplateView.as_view(template_name='index.html')),
+    path('', LoginUser.as_view()),
     path('admin/', admin.site.urls),
-    # path('mininsta/', include('apps.mininsta.urls'))
     path('post/', include('apps.post.urls')),
     path('user/', include('apps.user.urls')),
 ]
+
